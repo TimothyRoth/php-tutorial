@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
- fetch('http://server.local/server.php', {
+ const response = await fetch('http://server.local/server.php', {
     headers: {
         "X-Api-Token": "123"
     }
  })
-    .then(res => res.text())
-    .then(console.log)
-    .catch(console.error);
+
+ const data = await response.text();
+ 
+ document.querySelector(".show-response").innerHTML = data;
+
 });

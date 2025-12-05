@@ -1,19 +1,15 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: X-Api-Token");
+const ROOT_DIR = __DIR__;
 
-$apiToken = "123"; // normalerweise in einer DB stehen gamapped auf einen Client
-$headers = getallheaders(); // $_SERVER["X-Api-Token"];
+require 'vendor/autoload.php';
 
-if(!isset($headers["X-Api-Token"])) {
-    echo "Gib mir einen Token du Wurst";
-    exit;
-}
+$router = new \Bramus\Router\Router();
 
-if($headers["X-Api-Token"] !== $apiToken) {
-    echo "falscher Token du Nudel";
-    exit;
-}
+$router->get("/", function() {
+    include_once("./view/home.php");
+});
 
-echo "Hello World!!!!";
+$router->run();
+
+
