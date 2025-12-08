@@ -1,16 +1,7 @@
 {
-    "faqs": [
-        {
-            "headline": "Frage 1",
-            "answer": "Antwort 1"
-        },
-        {
-            "headline": "Frage 2",
-            "answer": "Antwort 2"
-        },
-        {
-            "headline": "Frage 3",
-            "answer": "Antwort 3"
-        }
-    ]
+  "api_keys": ["demo123", "secret456"],
+  "customers": [
+    { "id": 1, "name": "Alice", "email": "alice@example.com" },
+    { "id": 2, "name": "Bob", "email": "bob@example.com" }
+  ]
 }
